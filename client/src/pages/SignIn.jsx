@@ -12,8 +12,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 56px);
+  min-height: calc(100vh - 56px); /* Adjust min-height for smaller screens */
   color: ${({ theme }) => theme.text};
+
+  @media (max-width: 768px) {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
 `;
 
 const Wrapper = styled.div`
@@ -22,17 +26,30 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: ${({ theme }) => theme.bgLighter};
   border: 1px solid ${({ theme }) => theme.soft};
-  padding: 20px 50px;
+  padding: 20px 30px; /* Adjust padding for smaller screens */
   gap: 10px;
+
+  @media (max-width: 768px) {
+    width: 90%; /* Adjust width for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
 `;
 
 const Title = styled.h1`
   font-size: 24px;
+
+  @media (max-width: 768px) {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
 `;
 
 const SubTitle = styled.h2`
   font-size: 20px;
   font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
 `;
 
 const Input = styled.input`
@@ -42,6 +59,10 @@ const Input = styled.input`
   background-color: transparent;
   width: 100%;
   color: ${({ theme }) => theme.text};
+
+  @media (max-width: 768px) {
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
 `;
 
 const Button = styled.button`
@@ -52,6 +73,11 @@ const Button = styled.button`
   cursor: pointer;
   background-color: ${({ theme }) => theme.soft};
   color: ${({ theme }) => theme.textSoft};
+
+  @media (max-width: 768px) {
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
 `;
 
 const More = styled.div`
@@ -59,14 +85,27 @@ const More = styled.div`
   margin-top: 10px;
   font-size: 12px;
   color: ${({ theme }) => theme.textSoft};
+
+  @media (max-width: 768px) {
+    font-size: 10px; /* Adjust font size for smaller screens */
+    margin-top: 5px; /* Adjust margin for smaller screens */
+  }
 `;
 
 const Links = styled.div`
   margin-left: 50px;
+
+  @media (max-width: 768px) {
+    margin-left: 30px; /* Adjust margin for smaller screens */
+  }
 `;
 
 const Link = styled.span`
   margin-left: 30px;
+
+  @media (max-width: 768px) {
+    margin-left: 20px; /* Adjust margin for smaller screens */
+  }
 `;
 
 const SignIn = () => {

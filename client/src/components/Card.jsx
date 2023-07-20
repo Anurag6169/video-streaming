@@ -4,12 +4,18 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {format} from "timeago.js"
 
+
+
 const Container = styled.div`
   width: ${(props) => props.type !== "sm" && "360px"};
   margin-bottom: ${(props) => (props.type === "sm" ? "10px" : "45px")};
   cursor: pointer;
   display: ${(props) => props.type === "sm" && "flex"};
   gap: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%; /* Adjust to full width on smaller screens */
+  }
 `;
 
 const Image = styled.img`
@@ -17,6 +23,10 @@ const Image = styled.img`
   height: ${(props) => (props.type === "sm" ? "120px" : "202px")};
   background-color: #999;
   flex: 1;
+
+  @media (max-width: 768px) {
+    height: ${(props) => (props.type === "sm" ? "80px" : "150px")}; /* Adjust height for smaller screens */
+  }
 `;
 
 const Details = styled.div`
@@ -24,6 +34,10 @@ const Details = styled.div`
   margin-top: ${(props) => props.type !== "sm" && "16px"};
   gap: 12px;
   flex: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
 `;
 
 const ChannelImage = styled.img`
@@ -32,6 +46,10 @@ const ChannelImage = styled.img`
   border-radius: 50%;
   background-color: #999;
   display: ${(props) => props.type === "sm" && "none"};
+
+  @media (max-width: 768px) {
+    display: block; /* Show the channel image on smaller screens */
+  }
 `;
 
 const Texts = styled.div``;
@@ -40,19 +58,30 @@ const Title = styled.h1`
   font-size: 16px;
   font-weight: 500;
   color: ${({ theme }) => theme.text};
+
+  @media (max-width: 768px) {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
 `;
 
 const ChannelName = styled.h2`
   font-size: 14px;
   color: ${({ theme }) => theme.textSoft};
   margin: 9px 0px;
+
+  @media (max-width: 768px) {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
 `;
 
 const Info = styled.div`
   font-size: 14px;
   color: ${({ theme }) => theme.textSoft};
-`;
 
+  @media (max-width: 768px) {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+`;
 const Card = ({ type, video }) => {
 
   const [channel, setChannel] = useState({})

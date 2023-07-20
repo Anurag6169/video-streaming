@@ -25,8 +25,9 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 600px;
-  height: 600px;
+  width: 90%; /* Adjust width for smaller screens */
+  max-width: 600px;
+  height: 80vh; /* Adjust height for smaller screens */
   background-color: ${({ theme }) => theme.bgLighter};
   color: ${({ theme }) => theme.text};
   padding: 20px;
@@ -34,15 +35,31 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 10px; /* Adjust padding for smaller screens */
+    gap: 15px; /* Adjust gap for smaller screens */
+  }
 `;
+
 const Close = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
+  
+  @media (max-width: 768px) {
+    top: 5px; /* Adjust top position for smaller screens */
+    right: 5px; /* Adjust right position for smaller screens */
+  }
 `;
+
 const Title = styled.h1`
   text-align: center;
+  
+  @media (max-width: 768px) {
+    font-size: 24px; /* Adjust font size for smaller screens */
+  }
 `;
 
 const Input = styled.input`
@@ -52,14 +69,24 @@ const Input = styled.input`
   padding: 10px;
   background-color: transparent;
   z-index: 999;
+  
+  @media (max-width: 768px) {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
 `;
+
 const Desc = styled.textarea`
   border: 1px solid ${({ theme }) => theme.soft};
   color: ${({ theme }) => theme.text};
   border-radius: 3px;
   padding: 10px;
   background-color: transparent;
+  
+  @media (max-width: 768px) {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
 `;
+
 const Button = styled.button`
   border-radius: 3px;
   border: none;
@@ -68,9 +95,18 @@ const Button = styled.button`
   cursor: pointer;
   background-color: ${({ theme }) => theme.soft};
   color: ${({ theme }) => theme.textSoft};
+  
+  @media (max-width: 768px) {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
 `;
+
 const Label = styled.label`
   font-size: 14px;
+  
+  @media (max-width: 768px) {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
 `;
 const Upload = ({ setOpen }) => {
   const [img, setImg] = useState(undefined);
