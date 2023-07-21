@@ -19,6 +19,7 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 const Container = styled.div`
   flex: 1;
   background-color: ${({ theme }) => theme.bgLighter};
@@ -27,20 +28,38 @@ const Container = styled.div`
   font-size: 14px;
   position: sticky;
   top: 0;
+
+  @media (max-width: 768px) {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
 `;
+
 const Wrapper = styled.div`
   padding: 18px 26px;
+
+  @media (max-width: 768px) {
+    padding: 12px 16px; /* Adjust padding for smaller screens */
+  }
 `;
+
 const Logo = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
   font-weight: bold;
   margin-bottom: 25px;
+
+  @media (max-width: 768px) {
+    gap: 3px; /* Adjust gap for smaller screens */
+  }
 `;
 
 const Img = styled.img`
   height: 25px;
+
+  @media (max-width: 768px) {
+    height: 20px; /* Adjust height for smaller screens */
+  }
 `;
 
 const Item = styled.div`
@@ -48,19 +67,28 @@ const Item = styled.div`
   align-items: center;
   gap: 20px;
   cursor: pointer;
-  padding: 7.5px 0px;
+  padding: 2.5px 0px;
 
   &:hover {
     background-color: ${({ theme }) => theme.soft};
+  }
+
+  @media (max-width: 768px) {
+    gap: 15px; /* Adjust gap for smaller screens */
   }
 `;
 
 const Hr = styled.hr`
   margin: 15px 0px;
   border: 0.5px solid ${({ theme }) => theme.soft};
+
+  @media (max-width: 768px) {
+    margin: 10px 0px; /* Adjust margin for smaller screens */
+  }
 `;
 
 const Login = styled.div``;
+
 const Button = styled.button`
   padding: 5px 15px;
   background-color: transparent;
@@ -73,6 +101,11 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
+
+  @media (max-width: 768px) {
+    padding: 4px 10px; /* Adjust padding for smaller screens */
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
 `;
 
 const Title = styled.h2`
@@ -80,6 +113,11 @@ const Title = styled.h2`
   font-weight: 500;
   color: #aaaaaa;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 12px; /* Adjust font size for smaller screens */
+    margin-bottom: 15px; /* Adjust margin for smaller screens */
+  }
 `;
 
 const Menu = ({ darkMode, setDarkMode }) => {
@@ -91,7 +129,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <Logo>
             <Img src={LamaTube} />
-            LamaTube
+            MeTube
           </Logo>
         </Link>
         <Item>
@@ -137,7 +175,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
             <Hr />
           </>
         }
-        <Title>BEST OF LAMATUBE</Title>
+        <Title>BEST OF MeTUBE</Title>
         <Item>
           <LibraryMusicOutlinedIcon />
           Music
